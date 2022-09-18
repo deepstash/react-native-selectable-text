@@ -181,7 +181,7 @@ UITextPosition* beginning;
     const NSInteger location = [_backedTextInputView offsetFromPosition:beginning toPosition:selectionStart];
     const NSInteger endLocation = [_backedTextInputView offsetFromPosition:beginning toPosition:selectionEnd];
     
-    if (location == 0 && endLocation == 0) return;
+    if ((location == 0 && endLocation == 0) || (location > endLocation - location)) return;
     
     [_backedTextInputView select:self];
     [_backedTextInputView setSelectedRange:NSMakeRange(location, endLocation - location)];

@@ -225,7 +225,7 @@ UITextPosition* beginning;
             
             // the red component of a link text color is 0.0 and 0.2 depending of the theme
             // regular text has values around 0.19 on light and 1 on dark
-            if (colors[0] == 0.0 || colors[0] == 0.2) {
+            if (colors[0] == 0.0 || (colors[0] >= 0.5 && colors[0] <= 5.1)) {
                 // make sure the linksArray won't be out of range
                 if (self.linksArray.count > urlAndRange.count) {
                     NSDictionary* itemToBeAdded = @{
